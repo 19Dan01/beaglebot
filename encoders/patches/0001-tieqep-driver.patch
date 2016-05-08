@@ -163,7 +163,7 @@ index 0000000..7eb308a
 #define QWDPRD		0x0026
 #define QDECCTL		0x0028
 #define QEPCTL		0x002A
-#define QCAPCTL		0x0004
+#define QCAPCTL		0x0003
 #define QPOSCTL		0x002E
 #define QEINT		0x0030
 #define QFLG		0x0032
@@ -462,7 +462,7 @@ static ssize_t eqep_get_velocity(struct device *dev, struct device_attribute *at
 		/* set Velocity to Zero if rotation change occured */
 		velocity = 0;
 	}
-	else if (readl(eqep->mmio_base + QCPRD)>1000) {
+	else if (readl(eqep->mmio_base + QCPRD)> 300) {
 		/* Calculate Velocity for low speeds */
 		velocity = do_div(0.0015707963267948966192313217, (do_div(readl(eqep->mmio_base + QCPRD)), 3125000);
 			}
