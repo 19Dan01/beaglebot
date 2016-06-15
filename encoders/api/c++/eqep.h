@@ -75,10 +75,10 @@ public:
     // Get the QCPRD Register, pass poll as true to poll the pin, whereas passing false reads the immediate value
     uint16_t get_velocity(bool _poll = true);
 
-    // Set the direction no funktion
+    // Set the direction no function
     void set_direction(uint16_t direction);
 
-    // Get the status register with direction bit
+    // Get the QEPSTS status register with direction bit
     uint16_t get_direction();
 
 };
