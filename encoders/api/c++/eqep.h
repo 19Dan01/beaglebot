@@ -68,6 +68,19 @@ public:
 
     // Get the mode of the eQEP hardware
     eQEP_Mode get_mode();
+    
+   // Set the QCAPCTL Register
+    void set_velocity(uint16_t velocity);
+
+    // Get the QCPRD Register, pass poll as true to poll the pin, whereas passing false reads the immediate value
+    uint16_t get_velocity(bool _poll = true);
+
+    // Set the direction no funktion
+    void set_direction(uint16_t direction);
+
+    // Get the status register with direction bit
+    uint16_t get_direction();
+
 };
 
 #endif
